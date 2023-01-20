@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_putchar(char c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
 	
@@ -21,6 +21,7 @@ int	ft_formats(va_list args, const char format)
 {
 	int	qcp;
 
+	qcp = 0;
 	if (formats == 'c')
 		qcp += ft_putchar(va_arg(args, int));
 	if else (formats == 's')
@@ -59,6 +60,7 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			qcp = qcp + ft_putchar(str[i]);
+			i++;1
 		}
 	}
 	va_end(args);
