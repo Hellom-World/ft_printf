@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+<<<<<<< HEAD
 #include "ft_printf.h"
 
 int	ft_print_str(char *);
@@ -31,6 +32,9 @@ int	ft_print_str(char *);
 }
 
 int	ft_putchar(char c)
+=======
+int	ft_putchar(int c)
+>>>>>>> 376f9c0cb763369d1dec08fb13ddc2f0e6c3f427
 {
 	write(1, &c, 1);
 	
@@ -41,6 +45,7 @@ int	ft_formats(va_list args, const char format)
 {
 	int	qcp;
 
+	qcp = 0;
 	if (formats == 'c')
 		qcp += ft_putchar(va_arg(args), int));
 	if else (formats == 's')
@@ -79,6 +84,7 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			qcp = qcp + ft_putchar(str[i]);
+			i++;1
 		}
 	}
 	va_end(args);
