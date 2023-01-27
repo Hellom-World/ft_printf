@@ -6,9 +6,29 @@
 /*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:28:31 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/18 14:51:22 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:18:54 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	ft_print_str(char *);
+{
+	int	qcp;
+	int	i;
+
+	qcp = 0;
+	i = 0;
+	if (!str)
+		return (ft_print_str("(null)"));
+	while (str[i])
+	{
+		qcp += write(1, &str[i], sizeof(char));
+		i++;
+	}
+
+	return (qcp);
+}
 
 int	ft_putchar(char c)
 {
@@ -22,7 +42,7 @@ int	ft_formats(va_list args, const char format)
 	int	qcp;
 
 	if (formats == 'c')
-		qcp += ft_putchar(va_arg(args, int));
+		qcp += ft_putchar(va_arg(args), int));
 	if else (formats == 's')
 		qcp += ft_putstr(va_arg(args, char *));
 	if else (formats == 'p')
