@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_print_number(int n)
 {
@@ -21,13 +21,13 @@ int	ft_print_number(int n)
 	temp = n;
 	if (n < 0)
 	{
-		ft_putchar('-');
+		ft_print_char('-');
 		nbr_chr++;
 		temp = -temp;
 	}
 	if (temp >= 10)
 		nbr_chr += ft_print_number(temp / 10);
-	ft_putchar((temp % 10) + '0');
+	ft_print_char((temp % 10) + '0');
 	nbr_chr++;
 	return (nbr_chr);
 }
