@@ -2,9 +2,9 @@
 
 int	main(void)
 {	
-	char	*ptr;
-	ptr = "abc";
+	char	c;
+	c = 'q';
 
-	ft_printf("%p", ptr);
+	ft_printf("%c", c);
 	return(0);
 }

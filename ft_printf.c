@@ -6,12 +6,11 @@
 /*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:28:31 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/18 14:51:22 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/01/28 14:44:57 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "stdarg.h"
 
 int	ft_print_str(char *str)
 {
@@ -34,7 +33,7 @@ int	ft_print_str(char *str)
 	return (qcp);
 }
 
-int	ft_print_char(int c)
+int	ft_print_char(char c)
 {
 	write(1, &c, 1);
 	
@@ -51,7 +50,7 @@ int	ft_formats(va_list args, const char format)
 	else if (format == 's')
 		qcp += ft_print_str(va_arg(args, char *));
 	else if (format == 'p')
-		qcp += ft_print_pointer(va_arg(args, size_t));
+		qcp += ft_print_number(va_arg(args, size_t));
 	else if (format == 'd' || format == 'i')
 		qcp += ft_print_number(va_arg(args, int));
 	else if (format == 'u')
@@ -84,6 +83,7 @@ int	ft_printf(const char *str, ...)
 		else
 		{
 			qcp = qcp + ft_print_char(str[i]);
+			i++;
 		}
 	}
 	va_end(args);

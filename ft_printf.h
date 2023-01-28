@@ -6,7 +6,7 @@
 /*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:58:13 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/27 14:24:15 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/01/28 14:45:09 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdio.h>
-# include <math.h>
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
@@ -25,7 +24,7 @@
 
  int	ft_printf(const char *str, ...);
  int	ft_formats(va_list args, const char format);
- int	ft_print_char(int c);
+ int	ft_print_char(char c);
  int	ft_print_str(char *str);
  
  int	ft_print_pointer(size_t pointer);

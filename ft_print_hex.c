@@ -1,10 +1,25 @@
 #include "ft_printf.h"
 
-int	ft_print_hex(size_t n, char c)
+int	ft_hex_len(size_t n)
 {
 	int	len;
 
-	len = (int)(log((double)n) / log(16)) + 1;
+	len = 1;
+
+	while (n > 15)
+	{
+		n = n / 16;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_print_hex(size_t n, char c)
+{
+	int	len;
+	
+	len = ft_hex_len(n);
+
 	if (n > 15)
 	{
 		ft_print_hex(n / 16, c);
