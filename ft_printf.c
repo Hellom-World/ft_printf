@@ -50,11 +50,11 @@ int	ft_formats(va_list args, const char format)
 	else if (format == 's')
 		qcp += ft_print_str(va_arg(args, char *));
 	else if (format == 'p')
-		qcp += ft_print_number(va_arg(args, size_t));
+		qcp += ft_print_pointer(va_arg(args, size_t));
 	else if (format == 'd' || format == 'i')
 		qcp += ft_print_number(va_arg(args, int));
 	else if (format == 'u')
-			qcp += ft_print_number(va_arg(args, size_t));
+		qcp += ft_print_number(va_arg(args, size_t));
 	else if (format == 'x' || format == 'X')
 		qcp += ft_print_hex(va_arg(args, size_t), format);
 	else if (format == '%')
@@ -77,7 +77,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			qcp = qcp + ft_formats(args, str[i + 1]);
+			qcp = qcp + ft_formats(args, str[++i]);
 			i++;	
 		}
 		else

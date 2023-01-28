@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 SRCS	= ft_printf.c
-OBJS	= $(SRCS_BONUS:.c=.o)
+OBJS	= $(SRCS:.c=.o)
 CC	= cc
 CFLAGS	= -Wall -Wextra -Werror
 LIBCR	= ar rc
@@ -19,14 +19,17 @@ RM	= rm -f
 
 NAME	= ft_printf.a
 
-all:	$(NAME)
+all:		$(NAME)
 
-$(NAME)	$(OBJS)
-		$(LIBCR) $(NAME) $(OBJS)
+$(NAME):		$(OBJS)
+			$(LIBCR) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
-fclean:	clean
-	$(RM) $(NAME)
+			$(RM) $(OBJS)
+fclean:			clean
+			$(RM) $(NAME)
 
 re:	fclean all
+
+so:     $(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o ft_printf.so $(OBJS)
