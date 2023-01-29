@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/29 13:22:54 by heolivei          #+#    #+#             */
+/*   Updated: 2023/01/29 13:24:06 by heolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_hex_len(size_t n)
@@ -5,7 +17,6 @@ int	ft_hex_len(size_t n)
 	int	len;
 
 	len = 1;
-
 	while (n > 15)
 	{
 		n = n / 16;
@@ -17,9 +28,8 @@ int	ft_hex_len(size_t n)
 int	ft_print_hex(size_t n, char c)
 {
 	int	len;
-	
-	len = ft_hex_len(n);
 
+	len = ft_hex_len(n);
 	if (n > 15)
 	{
 		ft_print_hex(n / 16, c);
@@ -27,7 +37,7 @@ int	ft_print_hex(size_t n, char c)
 	}
 	else
 	{
-		if(c == 'x')
+		if (c == 'x')
 			ft_print_char(BASE_LOWER[n]);
 		else
 			ft_print_char(BASE_UPPER[n]);

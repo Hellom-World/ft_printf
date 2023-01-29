@@ -6,7 +6,7 @@
 /*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:37:21 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/27 14:39:56 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/01/29 13:54:35 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_print_number(int n)
 
 	nbr_chr = 0;
 	temp = n;
+	if (n == MIN_INT)
+		return (ft_print_str("-2147483648"));
 	if (n < 0)
 	{
 		ft_print_char('-');

@@ -6,7 +6,7 @@
 /*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:58:13 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/28 14:45:09 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/01/29 12:37:33 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,19 @@
 # define BASE_LOWER "0123456789abcdef"
 # define BASE_UPPER "0123456789ABCDEF"
 
- int	ft_printf(const char *str, ...);
- int	ft_formats(va_list args, const char format);
- int	ft_print_char(char c);
- int	ft_print_str(char *str);
- 
- int	ft_print_pointer(size_t pointer);
+int	ft_printf(const char *str, ...);
+int	ft_formats(va_list args, const char format);
+int	ft_print_char(char c);
+int	ft_print_str(char *str);
 
- int	ft_print_number(int n);
+int	ft_print_pointer(size_t pointer);
 
- int	ft_print_hex(size_t n, char c);
+int	ft_print_number(int n);
 
- /*
+int	ft_print_hex(size_t n, char c);
+
+/*
  int	ft_print_unsigned(unsigned int n);
 
   */
-
 #endif
