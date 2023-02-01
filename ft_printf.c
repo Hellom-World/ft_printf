@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:28:31 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/29 13:55:21 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:33:59 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int	ft_formats(va_list args, const char format)
 	else if (format == 'd' || format == 'i')
 		qcp += ft_print_number(va_arg(args, int));
 	else if (format == 'u')
-		qcp += ft_print_number(va_arg(args, size_t));
+		qcp += ft_print_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		qcp += ft_print_hex(va_arg(args, size_t), format);
+		qcp += ft_print_hex(va_arg(args, unsigned int), format);
 	else if (format == '%')
 		qcp += ft_print_char('%');
 	return (qcp);

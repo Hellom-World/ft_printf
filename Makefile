@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: heolivei <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/27 12:58:41 by heolivei          #+#    #+#              #
-#    Updated: 2023/01/29 13:41:46 by heolivei         ###   ########.fr        #
+#    Updated: 2023/02/01 20:33:07 by heolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ft_printf.c ft_print_hex.c ft_print_number.c ft_print_pointer.c
+SRCS	= ft_printf.c ft_print_hex.c ft_print_number.c ft_print_pointer.c ft_print_unsigned.c
 OBJS	= $(SRCS:.c=.o)
 CC	= cc
 CFLAGS	= -Wall -Wextra -Werror
@@ -31,5 +31,5 @@ fclean:			clean
 
 re:			fclean all
 
-so:     $(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o ft_printf.so $(OBJS)
+so:     $(CC) -g -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -g -nostartfiles -shared -o ft_printf.so $(OBJS)

@@ -1,46 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 13:22:54 by heolivei          #+#    #+#             */
-/*   Updated: 2023/02/01 21:12:28 by heolivei         ###   ########.fr       */
+/*   Created: 2023/01/27 12:58:13 by heolivei          #+#    #+#             */
+/*   Updated: 2023/02/01 20:49:15 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_hex_len(size_t n)
+int	ft_print_unsigned(unsigned int n)
 {
-	size_t	len;
+	int				count;
+	unsigned int	div;
+	int				digit;
 
-	len = 1;
-	while (n > 15)
+	digit = 0;
+	div = 1;
+	count = 0;
+	while (n / div >= 10)
 	{
-		n = n / 16;
-		len++;
+		div *= 10;
 	}
-	return (len);
-}
-
-int	ft_print_hex(size_t n, char c)
-{
-	size_t	len;
-
-	len = ft_hex_len(n);
-	if (n > 15)
+	while (div > 0)
 	{
-		ft_print_hex(n / 16, c);
-		ft_print_hex(n % 16, c);
+		digit = n / div % 10;
+		ft_print_char(digit + '0');
+		count++;
+		div /= 10;
 	}
-	else
-	{
-		if (c == 'x')
-			ft_print_char(BASE_LOWER[n]);
-		else
-			ft_print_char(BASE_UPPER[n]);
-	}
-	return (len);
+	return (count);
 }

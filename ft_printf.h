@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: heolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 12:58:13 by heolivei          #+#    #+#             */
-/*   Updated: 2023/01/29 12:37:33 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/02/01 21:28:50 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ int	ft_print_str(char *str);
 int	ft_print_pointer(size_t pointer);
 
 int	ft_print_number(int n);
+int	ft_print_unsigned(unsigned int n);
 
 int	ft_print_hex(size_t n, char c);
-
 /*
  int	ft_print_unsigned(unsigned int n);
 
