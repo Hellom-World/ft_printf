@@ -6,13 +6,13 @@
 /*   By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 13:22:54 by heolivei          #+#    #+#             */
-/*   Updated: 2023/02/01 21:12:28 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:40:17 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_hex_len(size_t n)
+int	ft_hex_len(size_t n)
 {
 	size_t	len;
 

@@ -6,7 +6,7 @@
 /*   By: heolivei <heolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:28:31 by heolivei          #+#    #+#             */
-/*   Updated: 2023/02/01 21:33:59 by heolivei         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:36:09 by heolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (qcp);
 }
-
 /*#include <stdio.h>
 
 int main() {
@@ -102,7 +101,7 @@ int main() {
    ft_printf("Character: %c\n", c);
    ft_printf("String: %s\n", s);
    ft_printf("Integer: %i\n", i);
-   ft_printf("Double: %d\n", d);
+   ft_printf("Decimal: %d\n", d);
    ft_printf("Hexadecimal (lowercase): %x\n", x);
    ft_printf("Hexadecimal (uppercase): %X\n", x);
    ft_printf("Percent sign: %%\n\n");
@@ -112,7 +111,7 @@ int main() {
    printf("Character: %c\n", c);
    printf("String: %s\n", s);
    printf("Integer: %i\n", i);
-   printf("Double: %d\n", d);
+   printf("Decimal: %d\n", d);
    printf("Hexadecimal (lowercase): %x\n", x);
    printf("Hexadecimal (uppercase): %X\n", x);
    printf("Percent sign: %%\n");
